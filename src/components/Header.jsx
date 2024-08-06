@@ -25,7 +25,9 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', toggleHeaderClass);
-    toggleHeaderClass(); // Call initially
+    window.addEventListener('resize', toggleHeaderClass);
+    toggleHeaderClass();
+     // Call initially
 
     return () => {
       window.removeEventListener('scroll', toggleHeaderClass);
