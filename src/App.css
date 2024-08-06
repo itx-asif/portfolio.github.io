@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.roboto{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.item{
+opacity: 0;
+transition: all 300ms linear;
+transform: translateY(20px);
+}
+.item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.active-header{
+background:rgb(0, 0, 0,0.6);
+backdrop-filter: blur(10px);
+  position: fixed;
+  color: white;
+  top: 0;
+  transition: all 300ms linear;
+}
+.sticky-header{
+  background: #fff;
+ position: sticky;
+ color: black;
+  top: 0;       
+  transition: all 300ms linear;
+}
+.sticky-header > div > .bu{
+  background: black;
+  color: white;
+}
+.sticky-header>div>ul>li , .active-header>div>ul>li{
+  border-bottom:transparent solid 2px  ;
+  transition: all 200ms linear;
+}
+.active-header > div > .bu{
+  background: #3dd0b7;
+  color: black;
+  border-radius: 8px;
+  
+}
+.line{
+
+  animation-name: A;
+  animation-iteration-count: 1;
+  animation-timeline: view();
+  animation-range-start: entry 99px;
+  animation-range-end: exit 99px;
+  animation-timing-function: linear;
+}
+@keyframes A {
+  0%{height: 0% ;}
+  100%{height: 100% ;}
+}
+.sticky-header>div>ul>li:hover>a{
+  border-bottom: black solid 2px;
+  transition: all 100ms linear;
+} .active-header>div>ul>li:hover{
+
+  border-bottom: #3dd0b7 solid 2px;
+}
+#Hero{
+  background-image: url("https://e0.pxfuel.com/wallpapers/149/259/desktop-wallpaper-web-development.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+backdrop-filter: blur(3px);
+
+}
+
+.container {
+
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #3dd0b7;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+ 
+.fadeinleft{
+ 
+  animation: fadeinleft 1ms  linear;
+
+}
+.project-section {
+  background-color: #f9f9f9;
+}
+
+#slider {
+  overflow: hidden;
+}
+
+.slider-items {
+  display: flex;
+  gap: 1rem;
+}
+
+.bg-card {
+  width: 300px;
+  /* Ensure this matches the width in JavaScript */
+}
+
+img {
+  object-fit: cover;
+}
+
+/* Navigation Button Styles */
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+@keyframes fadeinleft {
+  0%{
+      transform: translate(-300px);
+      opacity: 0;
+  }
+  100%{
+      transform: translate(0);
+      opacity: 1;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #menu{
+      background: rgb(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      height: 100dvh;
+      top: 0;
+      width: 30dvw fit-content;
+      padding-top:15vh ;
+    transform: translateX(300px);
+    transition: all 300ms linear;
+    display: flex;
+    flex-direction: column;
+  gap: 10px;
+    align-items: flex-start !important;
+  }
+  .none{
+      display: none !important;
+  }
+  .animate-menu{
+      transform: translateX(0px) !important;
+     
+  }
+  .active-header{
+      background:rgb(0, 0, 0);
+      backdrop-filter: blur(20px);
+          position: fixed;
+          color: white;
+          top: 0;
+          transition: all 300ms linear;
+      }
+}
