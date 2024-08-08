@@ -1,53 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
+:root{
+  --toastify-color-progress-light :white !important;
+  --toastify-color-progress-error:white !important;
+  --toastify-icon-color-success:white !important;
+  --toastify-icon-color-error:white !important;
+}
+.Toastify__progress-bar--success{
+  background: white;
+}
+.Toastify__toast-theme--light.Toastify__toast--success {
+  color: #fff;
+  background:  #3dd0b7;
+}
+.Toastify__progress-bar-theme--light.Toastify__progress-bar--success{
+  background: #fff;
+  color: #fff;
+}
+.Toastify__toast-theme--light.Toastify__toast--error {
+  color: #fff;
+  background: rgb(231, 54, 54);
+}
+#skill-text{
+  background: linear-gradient(#0a0a0a, #0a0a0a) 50% 50%/calc(100% - 6px) calc(100% - 6px) no-repeat,
+  linear-gradient(132deg, #3dd0b7 5%, rgba(0,0,0,0) 5%, rgba(255,255,255,0) 95%, #3dd0b7 95%);
+border-radius: 0px;
+
+box-sizing: border-box;
+}
+html, body {
+  max-width: 100%;
+accent-color: #3dd0b7;
+} 
+               
+.box-shadow:hover{
+  box-shadow:#3dd0b7 1px 0 20px 0px;
+ 
+}
+body {
   font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
   letter-spacing: .1em;
+  background-color: #0a0a0a;
+  color: #FFFFFF;
+ width: 99dvw;
+ 
 }
-.roboto{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.skill { 
+  width: 100%;
+  height: auto;
+
 }
-.item{
-opacity: 0;
-transition: all 300ms linear;
-transform: translateY(20px);
+
+
+.item {
+  opacity: 0;
+  transition: all 300ms linear;
+  transform: translateY(20px);
 }
+
 .item.animate {
   opacity: 1;
   transform: translateY(0);
 }
-.active-header{
-background:rgb(0, 0, 0,0.6);
-backdrop-filter: blur(10px);
+
+.active-header {
+  background: rgb(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
   position: fixed;
   color: white;
   top: 0;
   transition: all 300ms linear;
 }
-.sticky-header{
-  background: #fff;
- position: sticky;
- color: black;
-  top: 0;       
+.AN{
+  animation-play-state: paused;
+}
+::selection{
+  background: #3dd0b7;
+  color: #000;
+}
+.sticky-header 
+{
+ 
+  background: white;
+  position: sticky;
+  color: black;
+  top: 0;
   transition: all 300ms linear;
 }
-.sticky-header > div > .bu{
+
+.sticky-header>div>.bu {
   background: black;
   color: white;
 }
-.sticky-header>div>ul>li , .active-header>div>ul>li{
-  border-bottom:transparent solid 2px  ;
+
+.sticky-header>div>ul>li,
+.active-header>div>ul>li {
+  border-bottom: transparent solid 2px;
   transition: all 200ms linear;
 }
-.active-header > div > .bu{
+
+.active-header>div>.bu {
   background: #3dd0b7;
   color: black;
   border-radius: 8px;
-  
+
 }
-.line{
+
+.line {
 
   animation-name: A;
   animation-iteration-count: 1;
@@ -56,23 +117,33 @@ backdrop-filter: blur(10px);
   animation-range-end: exit 99px;
   animation-timing-function: linear;
 }
+
 @keyframes A {
-  0%{height: 0% ;}
-  100%{height: 100% ;}
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
 }
-.sticky-header>div>ul>li:hover>a{
+
+.sticky-header>div>ul>li:hover>a {
   border-bottom: black solid 2px;
   transition: all 100ms linear;
-} .active-header>div>ul>li:hover{
+}
+
+.active-header>div>ul>li:hover {
 
   border-bottom: #3dd0b7 solid 2px;
 }
-#Hero{
+
+#Hero {
   background-image: url("https://e0.pxfuel.com/wallpapers/149/259/desktop-wallpaper-web-development.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 
 }
 
@@ -81,7 +152,9 @@ backdrop-filter: blur(3px);
   cursor: pointer;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   width: 35px;
   height: 5px;
   background-color: #3dd0b7;
@@ -93,18 +166,21 @@ backdrop-filter: blur(3px);
   transform: translate(0, 11px) rotate(-45deg);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+  opacity: 0;
+}
 
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
 
- 
-.fadeinleft{
- 
-  animation: fadeinleft 1ms  linear;
+
+.fadeinleft {
+
+  animation: fadeinleft 1ms linear;
 
 }
+
 .project-section {
   background-color: #f9f9f9;
 }
@@ -137,43 +213,70 @@ button:hover {
 }
 
 @keyframes fadeinleft {
-  0%{
-      transform: translate(-300px);
-      opacity: 0;
+  0% {
+    transform: translate(-300px);
+    opacity: 0;
   }
-  100%{
-      transform: translate(0);
-      opacity: 1;
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
   }
 }
+
 @media only screen and (max-width: 1024px) {
-  #menu{
-      background: rgb(0, 0, 0, 0.8);
-      backdrop-filter: blur(5px);
-      height: 100dvh;
-      top: 0;
-      width: 30dvw fit-content;
-      padding-top:15vh ;
+  #menu {
+    background: rgb(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    height: 100dvh;
+    top: 0;
+    width:30dvw;
+    min-width: fit-content;
+    padding-top: 15vh;
     transform: translateX(300px);
     transition: all 300ms linear;
     display: flex;
     flex-direction: column;
-  gap: 10px;
+    gap: 10px;
     align-items: flex-start !important;
   }
-  .none{
-      display: none !important;
+
+  .none {
+    display: none !important;
   }
-  .animate-menu{
-      transform: translateX(0px) !important;
-     
+
+  .animate-menu {
+    transform: translateX(0px) !important;
+
   }
-  .active-header{
-      background:rgb(0, 0, 0);
-      backdrop-filter: blur(20px);
-          position: fixed;
-          color: white;
-          top: 0;
-          transition: all 300ms linear;
-      }
+
+  .active-header {
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    color: white;
+    top: 0;
+    transition: all 300ms linear;
+  }
 }
+
+.st0 {
+  fill: #d4b830
+}
+
+.st1,
+.st2 {
+  opacity: .986;
+  fill: #ebebeb;
+  fill-opacity: 0;
+  enable-background: new
+}
+
+.st2 {
+  fill-opacity: .9216
+}
+
+.st3 {
+  fill: #fdd83c
+}
+

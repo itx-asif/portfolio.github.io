@@ -1,11 +1,23 @@
 import { useEffect } from 'react';
+import Html from '../assets/html.png'
+import Css from '../assets/css.png'
+import Js from '../assets/js.png'
+import React from '../assets/react.png'
+
+import Cpp from '../assets/c++.png'
+import Laravel from '../assets/laravel.png'
+import Wordpress from '../assets/wordpress.png'
+import PHP from '../assets/php.png'
+import Img from '../assets/img.png'
+import Skills from '../assets/skill.json'
+import Lottie from 'lottie-react';
 const Header = () => {
   useEffect(() => {
     const toggleHeaderClass = () => {
       const header = document.getElementById('header');
       const logo = document.getElementById('logo');
       const hero = document.getElementById('Hero');
-      
+
       if (window.innerWidth > 1024) {
         const isScrolled = window.scrollY > header.offsetHeight - 10;
 
@@ -27,7 +39,7 @@ const Header = () => {
     window.addEventListener('scroll', toggleHeaderClass);
     window.addEventListener('resize', toggleHeaderClass);
     toggleHeaderClass();
-     // Call initially
+    // Call initially
 
     return () => {
       window.removeEventListener('scroll', toggleHeaderClass);
@@ -76,6 +88,7 @@ const Header = () => {
 
   return (
     <>
+      
       <header id="header" className="shadow w-full z-10 px-4 md:px-12 flex justify-between items-center">
         <div className="flex items-center gap-2 z-2">
           <svg id="logo" className="transition-all md:w-[50px] w-[30px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -89,10 +102,11 @@ const Header = () => {
             <li className="px-2 py-1 mx-2"><a href="#">About</a></li>
             <li className="px-2 py-1 mx-2"><a href="#">Skill</a></li>
             <li className="px-2 py-1 mx-2"><a href="#">Project</a></li>
+           
           </ul>
         </div>
         <div className="flex gap-4 w-max">
-          <a id="button" href="#" className="hidden sm:block rounded-lg w-fit text-nowrap bu px-4 py-2 transition-all font-semibold">Get In Touch</a>
+          <a id="button" href="#" className="sm:text-md text-sm block rounded-lg w-fit text-nowrap bu px-4 py-2 transition-all font-semibold">Get In Touch</a>
           <div className="container lg:hidden block" onClick={(e) => myFunction(e.currentTarget)}>
             <div className="bar1"></div>
             <div className="bar2"></div>
@@ -101,17 +115,17 @@ const Header = () => {
         </div>
       </header>
 
-      <div id="Hero" className="h-[642px] pt-20 z-2 w-full md:px-12 px-8 flex justify-center flex-col">
+      <div id="Hero" className="h-[642px] pt-20 z-2 w-100% md:px-12 px-8 flex justify-center flex-col">
         <div className="w-fit md:ml-[2vw]">
           <h1 className="md:text-7xl sm:text-6xl fadeinleft text-4xl w-fit font-semibold text-[#3dd0b7] md:leading-[80px]">Front-End</h1>
           <h1 id="hero-h" className="md:text-6xl fadeinleft sm:text-5xl text-3xl w-fit font-semibold text-white md:pl-[4em] pl-[3em] md:leading-[80px]">Developer</h1>
           <p id="hero-p" className="text-white max-w-[685px] text-right">Turning your vision into vibrant web experiences with expert design and clean, efficient code.</p>
         </div>
       </div>
-
-      <div className="flex flex-col lg:flex-row items-center bg-[#3dd0b7] rounded-lg lg:p-24 px-4 py-12 shadow-md">
-        <div className="mb-12 w-fit lg:mb-0 md:mr-6">
-          <img src="img.png" alt="Profile Picture" />
+      
+      <div className="flex flex-col lg:flex-row items-center  rounded-lg lg:p-24 px-4 py-6 shadow-md">
+        <div className="mb-6 w-fit lg:mb-0 md:mr-6">
+          <img src={Img} alt="Profile Picture" />
         </div>
         <div className="flex-1 roboto">
           <h1 className="text-4xl font-extrabold mb-2">Asif Raza</h1>
@@ -120,79 +134,62 @@ const Header = () => {
           <p className="mb-4">In my free time, I enjoy exploring new technologies, contributing to open-source projects, and sharing my knowledge through blogging and speaking at tech conferences. When I`m not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes in the kitchen.</p>
         </div>
       </div>
-
-      <div id="Skill" className="bg-background text-foreground p-6 rounded-lg shadow-lg my-8 animate-fade-in">
-        <h2 className="text-3xl font-bold mb-6 text-center text-accent">Skills</h2>
-        <div className="relative flex flex-col text-md items-center">
-          <div className="md:absolute md:flex hidden inset-0 p-0 py-[2.5rem] justify-center">
-            <div className="w-1 bg-black max-h-full min-h-0 line"><div id="h" className="w-3 bg-black md:block absolute hidden bottom-[2.5rem] h-1"></div></div>
+      <div className='w-dvh border-b-2 border-gray-200 opacity-5'></div>
+      <div className="lg:px-8 px-8 py-6 ">
+      <h1 className="text-6xl font-bold mb-4  text-center pb-10">Tech Stack</h1>
+        <div className='flex gap-12 text-justify mb-6'>
+          <div id='skill-text' className='lg:px-20 lg:py-6 p-4 lg:w-3/4'>
+          
+          As a student , I am actively expanding my skills with technologies and frameworks such as HTML, CSS, JavaScript, and other programing languages. Over the past, I have developed a solid foundation in web development  and am committed to continually enhancing my expertise. I am eager to apply my growing knowledge to new projects and opportunities as I advance in my learning journey.          
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 text-md gap-6 w-full">
-            <div className="flex item justify-end">
-              <div className="bg-zinc-800 text-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-5/6 animate-slide-in-left">
-                <h3 className="text-xl font-semibold mb-2">HTML5</h3>
-                <p>Expertise in structuring web content using HTML5</p>
-              </div>
-              <div className="w-2 bg-black md:block relative hidden mr-[-10px] top-10 h-1"></div>
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex  justify-end">
-            </div>
+       
             
-            <div className="flex item justify-start">
-              <div className="w-2 bg-black md:block relative hidden ml-[-10px] top-10 h-1"></div>
-              <div className="bg-zinc-200 text-zinc-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-5/6 animate-slide-in-right">
-                <h3 className="text-xl font-semibold mb-2">CSS3</h3>
-                <p>Proficiency in styling and layout with CSS3</p>
-              </div>
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex item justify-end">
-              <div className="bg-blue-500 text-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-5/6 animate-slide-in-left">
-                <h3 className="text-xl font-bold mb-2">JavaScript</h3>
-                <p>Strong skills for creating interactive and dynamic web features.</p>
-              </div>
-              <div className="w-2 bg-black md:block relative hidden mr-[-10px] top-10 h-1"></div>
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex item justify-start">
-              <div className="w-2 bg-black md:block relative hidden ml-[-10px] top-10 h-1"></div>
-              <div className="bg-red-500 text-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-5/6 animate-slide-in-right">
-                <h3 className="text-xl font-semibold mb-2">React</h3>
-                <p>Experience with React for building component-based user interfaces</p>
-              </div>
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex item justify-end">
-              <div className="bg-yellow-300 text-zinc-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-5/6 animate-slide-in-left">
-                <h3 className="text-xl font-semibold mb-2">TailwindCSS</h3>
-                <p>Ability to design responsive and custom user interfaces</p>
-              </div>
-              <div className="w-2 bg-black md:block relative hidden mr-[-10px] top-10 h-1"></div>
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex  justify-end">
-            </div>
-            <div className="flex item flex-col-reverse justify-start">
-              <div className="bg-zinc-300 text-zinc-800 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-5/6 animate-slide-in-right">
-                <h3 className="text-xl font-semibold mb-2">Responsive Web Design</h3>
-                <p>Knowledge of techniques and best practices for responsive web app.</p>
-              </div>
-            </div>
-          </div>
+       <Lottie
+       animationData={Skills} className=' lg:w-1/4 AN lg:block hidden border-2 border-[#3dd0b7]' />
         </div>
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-6 gap-y-4">
+          
+        <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+        <img src={Html} alt="" className='w-[15%] md:w-[15%] '  />
+  <h2 className="md:text-xl  font-semibold text-white">HTML</h2>
+
+  </div>
+<div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  
+   <img src={Css} alt="" className='' width='15%' />
+   <h2 className="md:text-xl  font-semibold text-white ">CSS</h2>
+  </div>
+  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  <img src={Js} alt="" className='' width='15%' />
+  <h2 className="md:text-xl  font-semibold text-white">Javascript</h2>
+  </div>
+  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  <img src={React} alt="" className='' width='15%' />
+  <h2 className="md:text-xl  font-semibold text-white">React</h2>
+  </div>
+  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  <img src={PHP} alt="" className='' width='15%' />
+  <h2 className="md:text-xl  font-semibold text-white">PHP</h2>
+  </div>
+  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  <img src={Laravel} alt="" className='' width='15%' />
+  <h2 className="md:text-xl  font-semibold text-white">Laravel</h2>
+  </div>
+  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  <img src={Cpp} alt="" className='' width='15%' />
+  <h2 className="md:text-xl  font-semibold text-white">C++
+  
+  </h2>
+  </div>
+  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+  <img src={Wordpress} alt="" className='' width='15%' />
+  <h2 className="md:text-xl  font-semibold text-white">Wordpress</h2>
+
+
+  </div>
+  </div>
       </div>
+
     </>
   );
 };
