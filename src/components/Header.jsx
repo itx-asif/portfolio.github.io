@@ -10,7 +10,7 @@ import Cpp from '../assets/c++.png'
 import Laravel from '../assets/laravel.png'
 import Wordpress from '../assets/wordpress.png'
 import PHP from '../assets/php.png'
-import Img from '../assets/img.png'
+import about from '../assets/about.json'
 import Skills from '../assets/skill.json'
 import Lottie from 'lottie-react';
 const Header = () => {
@@ -135,12 +135,12 @@ const Header = () => {
     data-aos='zoom-in' 
     data-aos-duration="1500" >About Me</h1>
   </div>
-      <div className="flex flex-col lg:flex-row items-center  rounded-lg lg:px-24 px-4 py-6 shadow-md">
-        <div className="mb-6 w-fit lg:mb-0 md:mr-6" data-aos='fade-right' data-aos-once="true"
+      <div className="flex flex-col lg:flex-row items-center  rounded-lg lg:pr-24 px-4 py-6 shadow-md">
+        <div className="mb-6 lg:w-[40%] lg:mb-0 md:mr-6" data-aos='fade-right' data-aos-once="true"
           data-aos-delay="130"
           data-aos-anchor-placement="center-bottom"
           data-aos-duration="1000">
-          <img src={Img} alt="Profile Picture" />
+          <Lottie animationData={about} className=''/>
         </div>
         <div className="flex-1 roboto"
           data-aos='fade-left'
