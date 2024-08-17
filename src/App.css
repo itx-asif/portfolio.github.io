@@ -47,6 +47,9 @@ body {
  width: 99dvw;
  
 }
+.bg-primary{
+  background: #0a0a0a;
+}
 .skill { 
   width: 100%;
   height: auto;
@@ -138,7 +141,7 @@ body {
   border-bottom: #3dd0b7 solid 2px;
 }
 
-#Hero {
+#Home {
   background-image: url("https://e0.pxfuel.com/wallpapers/149/259/desktop-wallpaper-web-development.jpg");
   background-repeat: no-repeat;
   background-position: center;

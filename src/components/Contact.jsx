@@ -6,10 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
   import Lottie from 'lottie-react';
   import animationData from '../assets/contact.json'
 
-
+  import Aos from 'aos';
+  import 'aos/dist/aos.css';
 const Contact = () => {
 
-
+  useEffect(() => {
+    Aos.init();
+  }, [])
   // Create refs for form inputs
   const nameRef = useRef();
   const emailRef = useRef();
@@ -48,14 +51,25 @@ const Contact = () => {
   };
 
   return (<>
-    <section className=" py-12 px-4 sm:px-6 lg:px-20">
+    <section className=" py-20 px-4 sm:px-6 lg:px-20 " id='Contact' >
                   <div className="max-w-7xl mx-auto">
-                    <h1 className='text-center font-extrabold text-5xl '>Get In Touch</h1>
+                    <h1 className='text-center font-extrabold text-5xl '
+                    data-aos-once="true"
+                    data-aos='zoom-in' 
+                    data-aos-duration="1000">Get In Touch</h1>
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 gap-8 pt-10">
                       
-                 <Lottie animationData={animationData}/>
-                      
-                      <div className="bg-[#333] p-6 rounded-lg shadow-lg my-auto w-40% text-white">
+                 <Lottie animationData={animationData}
+                  data-aos="fade-right"
+                  data-aos-anchor-placement="center-bottom" data-aos-once="true"
+                      data-aos-delay="130"
+                      data-aos-duration="1000"/>
+                        
+                      <div className="bg-[#333] p-6 rounded-lg shadow-lg my-auto w-40% text-white"
+                      data-aos="fade-left"
+                      data-aos-anchor-placement="center-bottom" data-aos-once="true"
+                          data-aos-delay="130"
+                          data-aos-duration="1000">
   <form onSubmit={handleSubmit} className="space-y-6">
     <div className='md:flex gap-4 w-full'>
       <div className='w-full mb-4 md:mb-0'>
@@ -97,7 +111,7 @@ const Contact = () => {
                   <div>
                   © 2023 Your Company. All rights reserved.
                   </div>
-                  <div className="flex gap-4 text-3xl items-center">
+                  <div className="flex gap-4 text-3xl items-center  ">
                   <i className="fa-brands fa-linkedin hover:text-[#3dd0b7]"></i>
                   <i className="fa-brands fa-square-github hover:text-[#3dd0b7]"></i>
                   <i className="fa-brands fa-square-instagram hover:text-[#3dd0b7]"></i>

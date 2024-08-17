@@ -3,6 +3,8 @@ import Html from '../assets/html.png'
 import Css from '../assets/css.png'
 import Js from '../assets/js.png'
 import React from '../assets/react.png'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import Cpp from '../assets/c++.png'
 import Laravel from '../assets/laravel.png'
@@ -13,10 +15,13 @@ import Skills from '../assets/skill.json'
 import Lottie from 'lottie-react';
 const Header = () => {
   useEffect(() => {
+    Aos.init();
+  }, [])
+  useEffect(() => {
     const toggleHeaderClass = () => {
       const header = document.getElementById('header');
       const logo = document.getElementById('logo');
-      const hero = document.getElementById('Hero');
+      const hero = document.getElementById('Home');
 
       if (window.innerWidth > 1024) {
         const isScrolled = window.scrollY > header.offsetHeight - 10;
@@ -88,7 +93,7 @@ const Header = () => {
 
   return (
     <>
-      
+
       <header id="header" className="shadow w-full z-10 px-4 md:px-12 flex justify-between items-center">
         <div className="flex items-center gap-2 z-2">
           <svg id="logo" className="transition-all md:w-[50px] w-[30px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -98,15 +103,15 @@ const Header = () => {
         </div>
         <div>
           <ul id="menu" className="lg:flex lg:static right-0 absolute font-semibold items-center text-xl">
-            <li className="px-2 py-1 mx-2"><a href="#">Home</a></li>
-            <li className="px-2 py-1 mx-2"><a href="#">About</a></li>
-            <li className="px-2 py-1 mx-2"><a href="#">Skill</a></li>
-            <li className="px-2 py-1 mx-2"><a href="#">Project</a></li>
-           
+            <li className="px-2 py-1 mx-2"><a href="#Home">Home</a></li>
+            <li className="px-2 py-1 mx-2"><a href="#About">About</a></li>
+            <li className="px-2 py-1 mx-2"><a href="#Skill">Skill</a></li>
+            <li className="px-2 py-1 mx-2"><a href="#Project">Project</a></li>
+
           </ul>
         </div>
         <div className="flex gap-4 w-max">
-          <a id="button" href="#" className="sm:text-md text-sm block rounded-lg w-fit text-nowrap bu px-4 py-2 transition-all font-semibold">Get In Touch</a>
+          <a id="button" href="#Contact" className="sm:text-md text-sm block rounded-lg w-fit text-nowrap bu px-4 py-2 transition-all font-semibold">Get In Touch</a>
           <div className="container lg:hidden block" onClick={(e) => myFunction(e.currentTarget)}>
             <div className="bar1"></div>
             <div className="bar2"></div>
@@ -115,81 +120,137 @@ const Header = () => {
         </div>
       </header>
 
-      <div id="Hero" className="h-[642px] pt-20 z-2 w-100% md:px-12 px-8 flex justify-center flex-col">
-        <div className="w-fit md:ml-[2vw]">
+      <div id="Home" className="h-[642px] pt-20 z-2 w-100% md:px-12 px-8 flex justify-center flex-col">
+        <div className="w-fit md:ml-[2vw] " data-aos='zoom-in'>
           <h1 className="md:text-7xl sm:text-6xl fadeinleft text-4xl w-fit font-semibold text-[#3dd0b7] md:leading-[80px]">Front-End</h1>
           <h1 id="hero-h" className="md:text-6xl fadeinleft sm:text-5xl text-3xl w-fit font-semibold text-white md:pl-[4em] pl-[3em] md:leading-[80px]">Developer</h1>
           <p id="hero-p" className="text-white max-w-[685px] text-right">Turning your vision into vibrant web experiences with expert design and clean, efficient code.</p>
         </div>
       </div>
-      
-      <div className="flex flex-col lg:flex-row items-center  rounded-lg lg:p-24 px-4 py-6 shadow-md">
-        <div className="mb-6 w-fit lg:mb-0 md:mr-6">
+      <div id="About" className='pt-20'></div>
+<section>
+  <div   >
+    <h1 className='text-6xl font-bold mb-4  text-center ' 
+      data-aos-once="true"
+    data-aos='zoom-in' 
+    data-aos-duration="1500" >About Me</h1>
+  </div>
+      <div className="flex flex-col lg:flex-row items-center  rounded-lg lg:px-24 px-4 py-6 shadow-md">
+        <div className="mb-6 w-fit lg:mb-0 md:mr-6" data-aos='fade-right' data-aos-once="true"
+          data-aos-delay="130"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="1000">
           <img src={Img} alt="Profile Picture" />
         </div>
-        <div className="flex-1 roboto">
-          <h1 className="text-4xl font-extrabold mb-2">Asif Raza</h1>
+        <div className="flex-1 roboto"
+          data-aos='fade-left'
+          data-aos-once="true"
+          data-aos-delay="130"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="1000">
+          <h1 className="text-4xl font-extrabold mb-2 " >Asif Raza</h1>
           <p className="mb-4 text-lg italic">Frontend Developer & TailwindCSS Enthusiast</p>
           <p className="mb-4">Hello! I`m Asif, a passionate frontend developer with a knack for creating beautiful and functional web interfaces. With a strong background in HTML, CSS, and JavaScript, I specialize in using TailwindCSS to build responsive and accessible web applications.</p>
           <p className="mb-4">In my free time, I enjoy exploring new technologies, contributing to open-source projects, and sharing my knowledge through blogging and speaking at tech conferences. When I`m not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes in the kitchen.</p>
         </div>
       </div>
+      </section>
+      <div id="Skill" className='pt-20'></div>
+   
+      <section >
       <div className='w-dvh border-b-2 border-gray-200 opacity-5'></div>
       <div className="lg:px-8 px-8 py-6 ">
-      <h1 className="text-6xl font-bold mb-4  text-center pb-10">Tech Stack</h1>
+        <h1 className="text-6xl font-bold mb-4  text-center pb-10" 
+        data-aos-once="true"
+    data-aos='zoom-in' 
+    data-aos-duration="1000">Tech Stack</h1>
         <div className='flex gap-12 text-justify mb-6'>
-          <div id='skill-text' className='lg:px-20 lg:py-6 p-4 lg:w-3/4'>
-          
-          As a student , I am actively expanding my skills with technologies and frameworks such as HTML, CSS, JavaScript, and other programing languages. Over the past, I have developed a solid foundation in web development  and am committed to continually enhancing my expertise. I am eager to apply my growing knowledge to new projects and opportunities as I advance in my learning journey.          
+          <div id='skill-text' className='lg:px-20 lg:py-6 p-4 lg:w-3/4' data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" 
+            data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000">
+
+            As a student , I am actively expanding my skills with technologies and frameworks such as HTML, CSS, JavaScript, and other programing languages. Over the past, I have developed a solid foundation in web development  and am committed to continually enhancing my expertise. I am eager to apply my growing knowledge to new projects and opportunities as I advance in my learning journey.
           </div>
-       
-            
-       <Lottie
-       animationData={Skills} className=' lg:w-1/4 AN lg:block hidden border-2 border-[#3dd0b7]' />
+
+
+          <Lottie
+            animationData={Skills} className=' lg:w-1/4 AN lg:block hidden border-2 border-[#3dd0b7]' data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" 
+            data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" />
         </div>
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-6 gap-y-4">
-          
-        <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-        <img src={Html} alt="" className='w-[15%] md:w-[15%] '  />
-  <h2 className="md:text-xl  font-semibold text-white">HTML</h2>
 
-  </div>
-<div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  
-   <img src={Css} alt="" className='' width='15%' />
-   <h2 className="md:text-xl  font-semibold text-white ">CSS</h2>
-  </div>
-  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  <img src={Js} alt="" className='' width='15%' />
-  <h2 className="md:text-xl  font-semibold text-white">Javascript</h2>
-  </div>
-  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  <img src={React} alt="" className='' width='15%' />
-  <h2 className="md:text-xl  font-semibold text-white">React</h2>
-  </div>
-  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  <img src={PHP} alt="" className='' width='15%' />
-  <h2 className="md:text-xl  font-semibold text-white">PHP</h2>
-  </div>
-  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  <img src={Laravel} alt="" className='' width='15%' />
-  <h2 className="md:text-xl  font-semibold text-white">Laravel</h2>
-  </div>
-  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  <img src={Cpp} alt="" className='' width='15%' />
-  <h2 className="md:text-xl  font-semibold text-white">C++
-  
-  </h2>
-  </div>
-  <div className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
-  <img src={Wordpress} alt="" className='' width='15%' />
-  <h2 className="md:text-xl  font-semibold text-white">Wordpress</h2>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" 
+            data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={Html} alt="" className='w-[15%] md:w-[15%] ' />
+            <h2 className="md:text-xl  font-semibold text-white">HTML</h2>
+
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+
+            <img src={Css} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white ">CSS</h2>
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={Js} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white">Javascript</h2>
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={React} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white">React</h2>
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={PHP} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white">PHP</h2>
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={Laravel} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white">Laravel</h2>
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={Cpp} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white">C++
+
+            </h2>
+          </div>
+          <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-once="true"
+            data-aos-delay="130"
+            data-aos-duration="1000" className="hover:bg-[#3dd0b7] md:px-4 px-2 py-2 shadow-xl flex gap-2 items-center transition-transform transform hover:scale-105  border border-gray-200">
+            <img src={Wordpress} alt="" className='' width='15%' />
+            <h2 className="md:text-xl  font-semibold text-white">Wordpress</h2>
 
 
-  </div>
-  </div>
+          </div>
+        </div>
       </div>
-
+      </section>
     </>
   );
 };

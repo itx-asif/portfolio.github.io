@@ -14,11 +14,15 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@react-email/components": "^0.0.22",
+    "aos": "^2.3.4",
     "emailjs": "^4.0.3",
     "lottie-react": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-toastify": "^10.0.5"
+    "react-loader-spinner": "^6.1.6",
+    "react-toastify": "^10.0.5",
+    "resend": "^3.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
