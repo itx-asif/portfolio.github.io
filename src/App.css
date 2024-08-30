@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+  overflow-x: hidden;
+}
+
 :root{
   --toastify-color-progress-light :white !important;
   --toastify-color-progress-error:white !important;
@@ -96,8 +101,14 @@ body {
 .sticky-header>div>.bu {
   background: black;
   color: white;
+  border: 2px solid black;
 }
+.sticky-header>div>.bu:hover{
 
+
+  background: white;
+  color: black;
+}
 .sticky-header>div>ul>li,
 .active-header>div>ul>li {
   border-bottom: transparent solid 2px;
@@ -108,7 +119,14 @@ body {
   background: #3dd0b7;
   color: black;
   border-radius: 8px;
+  border: #3dd0b7 solid 2px;
 
+}
+.active-header>div>.bu:hover {
+  background: black;
+  color: #3dd0b7;
+  border-radius: 8px;
+  border: #3dd0b7 solid 2px;
 }
 
 .line {

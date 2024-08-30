@@ -108,8 +108,8 @@ const Contact = () => {
                 </section>
 
                 <footer className="flex justify-around py-8 items-center">
-                  <div>
-                  © 2023 Your Company. All rights reserved.
+                  <div className=''>
+                  <h1 >© 2024 All rights reserved. </h1>
                   </div>
                   <div className="flex gap-4 text-3xl items-center  ">
                   <i className="fa-brands fa-linkedin hover:text-[#3dd0b7]"></i>
